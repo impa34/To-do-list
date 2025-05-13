@@ -1,0 +1,41 @@
+@font-face {
+font-family: 'outfit-c';
+src: url(../fonts/outfit-regular.woff2);
+}
+body {
+    background-color: black;
+    color:white;
+    font-family: 'outfit-c';
+}
+
+text {
+    color: white;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.task {
+    font-family: 'outfit-c';
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.checkbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16px;
+    height: 16px;
+}
