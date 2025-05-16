@@ -1,134 +1,42 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 @font-face {
-font-family: 'ubuntu';
-src: url(../fonts/Ubuntu-Regular.ttf);
+    font-family: 'ubuntu';
+    src: url(../fonts/Ubuntu-Regular.ttf);
 }
+
 body {
+    align-items: center;
+    background-color: #F6F0F0;
+    color: #2E2E2E;
     display: flex;
+    font-family: 'ubuntu';
+    justify-content: center;
     min-height: 100vh;
-    justify-content: center;
-    align-items: center;
-    background-color: #525252;
-    color:white;
-    font-family: 'ubuntu';
-}
-.container {
-    width: 680px;
-    margin-left: auto;
-}
-.entry {
-    position: relative;
-    height: 80px;
-    line-height: 80px;
-}
-.input-group {
-    position: relative;
-    width: 100%;
-}
-.label {
-    position: absolute;
-    top: 40%;
-    left: 15px;
-    line-height: 30px;
-    transform: translateY(-50%);
-    font-size: 1.6em;
-    color: white;
-    background-color: #525252;
-    padding: 0 5px;
-    transition: 0.2s ease;
-    pointer-events: none;
-}
-.custom-flatpickr {
-    font-family: 'ubuntu';
-    font-size: 1.5em;
-    background: transparent;
-    color: white;
-    border: 2px solid white;
-    border-radius: 5px;
-    padding: 10px 15px;
-    width: 170px;
-    outline: none;
 }
 
-.custom-flatpickr:focus {
-    border: 4px solid #9EC6F3;
-    color: #9EC6F3;
-}
-
-.flatpickr-calendar {
-    background: #525252;
-    color: white;
-    font-family: 'ubuntu';
-}
-.flatpickr-day.selected {
-    background: #9EC6F3;
-    color: #525252;
-}
-input, select {
-    font-size: 2em;
-    font-family: 'ubuntu';
-    outline: none;
-    border-radius: 5px;
-    line-height: 50px;
-    border: 2px solid white;
-    background: transparent;
-    transition: 0.1s ease;
-    z-index: 1111;
-}
-select {
-    font-size: 2em;
-    outline: none;
-    border-radius: 5px;
-    background: transparent;
-    border: 2px solid white;
-    margin: 10px;
-
-}
-input:focus,
-input:valid,
-select:valid {
-    color: #9EC6F3;
-    border: 4px solid #9EC6F3;
-}
-input:focus + .label,
-input:valid + .label{
-    color: #9EC6F3;
-    top: -10px;
-    font-size: 1.1em;
-    background-color: #525252;
-    padding: 0 5px;
-}
-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 .btn {
-    display: flex;
-    justify-content: center;
     align-items: center;
-    margin-left: auto;
-    margin-right: auto;
+    background: transparent;
+    border: 3px solid #CCCCCC;
+    border-radius: 5px;
+    color: #2E2E2E;
+    cursor: pointer;
+    display: flex;
+    flex: 0 0 auto;
     font-family: 'ubuntu';
     font-size: 1.8em;
-    padding: 10px 30px;
-    background: transparent;
-    color: white;
-    border: 3px solid white;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 20px;
+    justify-content: center;
+    margin: 0;
+    min-width: 120px;
+    order: 0;
     outline: none;
-}
-.btn:hover {
-    color: #9EC6F3;
-    border-color: #9EC6F3;
-    transform: translateY(-2px);
+    padding: 8px 10px;
+    transition: all 0.3s ease;
 }
 
 .btn:active {
@@ -136,47 +44,278 @@ form {
 }
 
 .btn:focus {
-    color: #9EC6F3;
-    border: 4px solid #9EC6F3;
-}
-.task {
-    color: #f0f0f0;
-    font-size: 1.2em;
-}
-.task-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    margin: 10px;
-    margin-bottom: 10px;
-    font-size: 1.7em;
-}
-.priority-span {
-    font-weight: bold;
-    padding: 2px 6px;
-    border-radius: 4px;
-    margin-left: 8px;
-    font-size: 0.9em;
-}
-.priority-high {
-  background-color: #ff4d4d;
-  color: white;
-}
-.priority-medium {
-  background-color: #ffd633;
-  color: black;
-}
-.priority-low {
-  background-color: #4ddbff;
-  color: black;
+    border: 4px solid #6AB04C;
+    color: #6AB04C;
 }
 
-input[type="date"] ::-webkit-datetime-edit {
+.btn:hover {
+    border-color: #6AB04C;
+    color: #6AB04C;
+    transform: translateY(-2px);
+}
+
+.checkbox {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid #2E2E2E;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    height: 24px;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+    width: 24px;
+}
+
+.checkbox:checked::after {
+    border: solid #2E2E2E;
+    border-width: 0 1px 1px 0;
+    content: "";
+    height: 8px;
+    left: 6px;
+    position: absolute;
+    top: 2px;
+    transform: rotate(45deg);
+    width: 3px;
+}
+
+.checkbox:hover {
+    box-shadow: 0 0 5px #6AB04C;
+}
+
+.container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+    width: 680px;
+}
+
+.custom-flatpickr {
+    background: transparent;
+    border: 2px solid #CCCCCC;
+    border-radius: 5px;
+    color: #2E2E2E;
+    font-family: 'ubuntu';
+    font-size: 1.5em;
+    height: 52px;
+    outline: none;
+    padding: 10px 15px;
+    width: 100%;
+}
+
+.custom-flatpickr:focus {
+    border: 4px solid #6AB04C;
+    color: #6AB04C;
+}
+
+.date-group {
+    flex: 1;
+    min-width: 170px;
+}
+
+.entry {
+    height: 80px;
+    line-height: 80px;
+    position: relative;
+}
+
+.flatpickr-calendar {
+    background: #F6F0F0;
+    color: #2E2E2E;
+    font-family: 'ubuntu';
+}
+
+.flatpickr-day.selected {
+    background: #6AB04C;
+    color: #F6F0F0;
+}
+
+.form {
+    align-items: center;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 15px;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.input-group {
+    flex: 2;
+    min-width: 250px;
+}
+
+input {
+    background: transparent;
+    border: 2px solid #CCCCCC;
+    border-radius: 5px;
+    font-family: 'ubuntu';
+    font-size: 1.5em;
+    line-height: 50px;
+    outline: none;
+    transition: 0.1s ease;
+    z-index: 1111;
+}
+
+input:focus,
+input:valid,
+select:valid {
+    border: 4px solid #6AB04C;
+    color: #6AB04C;
+}
+
+input:focus + .label,
+input:valid + .label {
+    background-color: #F6F0F0;
+    color: #6AB04C;
+    font-size: 1.1em;
+    padding: 0 5px;
+    top: -10px;
+}
+
+input[type="date"]::-webkit-datetime-edit {
     color: transparent;
 }
 
-input[type="date"]:focus ::-webkit-datetime-edit,
-input[type="date"]:valid ::-webkit-datetime-edit {
-    color: #9EC6F3 !important;
+input[type="date"]:focus::-webkit-datetime-edit,
+input[type="date"]:valid::-webkit-datetime-edit {
+    color: #6AB04C !important;
+}
+
+.label {
+    background-color: #F6F0F0;
+    color: #2E2E2E;
+    font-size: 1.6em;
+    left: 15px;
+    line-height: 30px;
+    padding: 0 5px;
+    pointer-events: none;
+    position: absolute;
+    top: 47%;
+    transform: translateY(-50%);
+    transition: 0.2s ease;
+}
+
+.priority-high {
+    background-color: #EB4D4B;
+    color: #2E2E2E;
+}
+
+.priority-low {
+    background-color: #22A6B3;
+    color: #2E2E2E;
+}
+
+.priority-medium {
+    background-color: #F9CA24;
+    color: #2E2E2E;
+}
+
+.priority-span {
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-left: 8px;
+    padding: 2px 6px;
+}
+
+select {
+    background: transparent;
+    background-color: #F6F0F0;
+    border: 2px solid #CCCCCC;
+    border-radius: 5px;
+    color: #2E2E2E;
+    font-family: 'ubuntu';
+    font-size: 2em;
+    height: 52px;
+    margin-top: 14px;
+    outline: none;
+}
+
+.select-group {
+    flex: 1;
+    min-width: 120px;
+}
+
+.task {
+    align-items: center;
+    color: #2E2E2E;
+    display: flex;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    font-size: 1.2em;
+    gap: 10px;
+    padding: 10px;
+    word-break: break-word;
+}
+
+.task span {
+    margin-left: 8px;
+    white-space: nowrap;
+}
+
+.task-container {
+    align-items: center;
+    display: flex;
+    font-size: 1.7em;
+    gap: 15px;
+    justify-content: flex-start;
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 10px 15px;
+    width: 100%;
+}
+
+.task-enter {
+    animation: fadeInUp 0.4s ease forwards;
+}
+
+.task-exit {
+    animation: fadeOutDown 0.4s ease forwards;
+}
+
+#tasks {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#tasks-container {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+#text-input {
+    font-size: 1.5em;
+    width: 100%;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOutDown {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(20px);
+    }
 }

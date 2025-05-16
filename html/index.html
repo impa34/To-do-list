@@ -11,25 +11,27 @@
 </head>
 <body>
     <div class="container">
-        <div id="tasks"></div>
+        <div class="tasks-container">
+            <div id="tasks"></div>
+        </div> 
         <div class="entry">
         <form class="form">
         <div class="input-group">
             <input type="tasks-text" id="text-input" required>
             <label class="label">Task</label>
         </div>
+        <div class="date-group">
+            <input type="text" id="deadline" placeholder="Deadline" class="custom-flatpickr" required>
+        </div> 
         <div class="select-group">
-            <button class="btn" id="button">Add</button>
             <select id="prio-select" required>
-                <option value="" disabled selected >Priority</option>
+                <option value="" disabled selected>Priority</option>
                 <option>High</option>
                 <option>Medium</option>
                 <option>Low</option>
             </select>
-            </div>
-            <div class="date-group">
-                <input type="text" id="deadline" placeholder="Date" class="custom-flatpickr" required>
-            </div>  
+        </div>
+        <button class="btn" id="button" type="submit">Add</button>
     </form>
     </div>
     </div>
