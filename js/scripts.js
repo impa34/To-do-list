@@ -10,13 +10,41 @@ const form = document.getElementById("entry");
 // Added flatpickr for date management
 let flatpickrInstance;
 
+// Functions to save and load tasks after reloading page
+function saveTasks() {
+    const tasks = document.getElementById("tasks").innerHTML
+    localStorage.setItem("savedTasks", tasks)
+}
+
+function loadTasks() {
+    const savedTasks = localStorage.getItem("savedTasks");
+    if (savedTasks) {
+        document.getElementById("tasks").innerHTML = savedTasks;
+        // Reassign event listeners after reloading page
+        document.querySelectorAll(".checkbox").forEach(checkBox => {
+            checkBox.addEventListener("click", function () {
+                const container = this.parentElement;
+                container.classList.remove("task-enter");
+                container.classList.add("task-exit");
+                setTimeout(() => {
+                    container.remove,
+                    saveTasks();},
+                    400);
+                
+            })
+        })
+    }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     flatpickrInstance = flatpickr("#deadline", {
         dateFormat: "d/m/Y",
         locale: "en",
         allowInput: true,
     });
+    loadTasks();
 });
+
 
 
 // Function to add the new task into the html
@@ -67,13 +95,16 @@ button.addEventListener("click", function () {
     container.appendChild(newTask);
     tasks.appendChild(container);
     
-
+    // Saving tasks into the localStorage
+    saveTasks();
     // As checkbox is clicked text disappears
     checkBox.addEventListener("click", function() {
         container.classList.remove("task-enter");
         container.classList.add("task-exit");
 
-        setTimeout(() => {container.remove();
+        setTimeout(() => {
+        container.remove();
+        saveTasks();
         }, 400);
     })
 
